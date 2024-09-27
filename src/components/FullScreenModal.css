@@ -1,0 +1,44 @@
+/* src/components/FullScreenModal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6; /* Encima de todo */
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: auto;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        height: auto;
+    }
+
+    .modal-image {
+        max-width: 90%;
+        max-height: 90%;
+    }
+}

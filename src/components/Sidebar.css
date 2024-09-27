@@ -1,0 +1,67 @@
+/* src/components/Sidebar.css */
+
+/* Sidebar */
+.sidebar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    width: 15vw;
+    min-width: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    z-index: 2; /* Above rain-animation */
+    position: relative;
+}
+.sidebar img {
+    max-width: 100%; /* La imagen ocupará el ancho disponible del panel */
+    height: auto; /* Mantendrá la proporción de la imagen */
+    z-index: 3; /* Asegura que esté por encima de la animación de lluvia */
+    position: relative; /* Asegura que siga en el flujo normal del layout */
+}
+
+.sidebar-starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Detrás del contenido del sidebar */
+}
+
+.sidebar .nav {
+    position: relative;
+    z-index: 3; /* Asegura que el texto y el menú estén por encima de la animación de lluvia */
+}
+
+.sidebar.desktop {
+    transform: translateX(0);
+}
+
+.sidebar.mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 70%;
+    transform: translateX(-100%);
+}
+
+.sidebar.mobile.active {
+    transform: translateX(0);
+}
+
+.sidebar .nav-link {
+    color: #fff;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active-link {
+    color: #ccc;
+    text-decoration: underline;
+}
+

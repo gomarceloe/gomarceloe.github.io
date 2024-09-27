@@ -1,0 +1,196 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* Fondo negro */
+    color: #fff;
+}
+
+.App {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Botón de menú para móviles */
+.menu-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 5;
+    background-color: #0f161c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu-button:focus {
+    outline: none;
+}
+
+/* Contenedor principal */
+.main-content.desktop {
+    margin-left: 0;
+    padding: 10px;
+    width: calc(100% - 15vw); /* Ajustamos el espacio ocupado por el sidebar */
+    transition: margin-left 0.3s ease-in-out;
+    position: relative;
+}
+
+.main-content.mobile {
+    width: 100%;
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Carousel Display */
+.carousel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+}
+
+/* Wrapper para las imágenes */
+.images-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para las imágenes */
+.carousel-image {
+    max-width: 60%; /* Ajustamos las imágenes para que sean más pequeñas */
+    max-height: 75vh; /* Asegura que la imagen no sea más alta que el 75% del alto de la ventana */
+    margin: 0 10px;
+    cursor: pointer;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    object-fit: cover; /* Hace que las imágenes se ajusten bien al espacio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 2; /* Encima de la animación de fondo */
+}
+
+/* Hover en las imágenes */
+.carousel-image:hover {
+    transform: none;
+    opacity: none;
+}
+
+/* Estilos para imágenes agrupadas en pares verticales */
+.image-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Ajusta el ancho del grupo */
+    height: 75vh; /* Asegura que la altura del grupo sea igual a las imágenes individuales */
+}
+
+.image-group img {
+    max-width: 48%; /* Cada imagen en el grupo de dos ocupará casi la mitad del espacio disponible */
+    max-height: 100%; /* Asegura que las imágenes se ajusten al tamaño del contenedor del grupo */
+    object-fit: cover;
+    margin: 0 10px;
+}
+
+/* Áreas de navegación (botones laterales grandes) */
+/* Áreas de navegación (botones laterales grandes) */
+.nav-area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 15%; /* Ajustamos el ancho de las áreas pulsables a los lados */
+    cursor: pointer;
+    z-index: 3; /* Encima de las imágenes */
+    transition: background-color 0.3s ease;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    
+}
+
+.nav-area.left {
+    left: 0; /* Coloca el área pulsable a la izquierda */
+}
+
+.nav-area.right {
+    right: 0; /* Coloca el área pulsable a la derecha */
+}
+
+.nav-area:hover {
+    background: 0f161c; /* Efecto hover con un fondo más oscuro */
+}
+
+.nav-area i {
+    display: none; /* Esto asegura que no haya contenido visible dentro del botón */
+}
+
+/* Animaciones de Fade */
+.fade-out-left {
+    opacity: 0;
+    transform: none;
+}
+
+.fade-out-right {
+    opacity: 0;
+    transform: none;
+}
+
+/* Modal de pantalla completa */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-images-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .carousel-image {
+        max-width: 90%;
+        max-height: 60%;
+    }
+
+    .modal-image {
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
